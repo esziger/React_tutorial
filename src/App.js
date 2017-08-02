@@ -13,6 +13,31 @@ class WelcomeClass extends React.Component {
 }
 
 
+class Toggle extends React.Component{
+
+constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+  }
+
+//using property initializer syntax to define an event function
+handleClick= () =>{
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+render(){
+  return(
+   <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+  )
+}
+
+}
+
+
 class Clock extends React.Component{
 
   constructor(props){
@@ -122,6 +147,7 @@ class App extends Component {
         <WelcomeClass/>
         <Comment author={author}/>
         <Clock/>
+        <Toggle/>
       </div>
     );
   }

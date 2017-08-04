@@ -164,6 +164,11 @@ class App extends Component {
 
     const messages = ['React', 'Re: React', 'Re:Re: React'];
 
+    const numbers = [1, 2, 3, 4, 5];
+    const listItems = numbers.map((number) =>
+      <li key={number.toString()}>{number}</li>
+    );
+
 
     return (
       <div className="App">
@@ -184,6 +189,7 @@ class App extends Component {
         <Toggle/>
         <Greeting isLoggedIn ={false}/>
         <Mailbox unreadMessages={messages}/>
+        <ul>{listItems}</ul>
       </div>
     );
   }
